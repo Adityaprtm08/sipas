@@ -89,8 +89,9 @@ class Profile extends BaseController
     // cek Gambar, Apakah Update atau Tidak
     if($fileFoto->getError() == 4){
       $namaFoto = $this->request->getVar('fotoLama');
+	return;
     }
-    else{
+    
       // Generate Nama Foto Profile Random
       $namaFoto = $fileFoto->getRandomName();
 
@@ -101,7 +102,7 @@ class Profile extends BaseController
       if($this->request->getVar('fotoLama') != 'default.png'){
         unlink('img/profile/' . $this->request->getVar('fotoLama'));
       }
-    }
+    
 
 
     $this->PenggunaModel->save([
