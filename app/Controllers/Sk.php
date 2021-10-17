@@ -19,7 +19,9 @@ class Sk extends BaseController
 		$this->bagianModel = new BagianModel();
     $this->fungsi = new Fungsi();
   }
-
+public function getVariabel($str){
+	$this->request->getVar($str)
+}
   public function index()
 	{
     $id_bagian = $this->fungsi->getUserData(session()->get('id_user'))[0] ['id_bagian'];
@@ -126,14 +128,14 @@ class Sk extends BaseController
 		$namaLampiran = $fileLampiran->getName();
 
     $this->skModel->save([
-      'nomor_surat' => $this->request->getVar('nomor_surat'),
-      'tanggal_surat' => $this->request->getVar('tanggal_surat'),
-      'tanggal_kirim' => $this->request->getVar('tanggal_kirim'),
-      'nomor_agenda' => $this->request->getVar('nomor_agenda'),
-      'sifat_surat' => $this->request->getVar('sifat_surat'),
-      'id_bagian' => $this->request->getVar('id_bagian'),
-      'penerima' => $this->request->getVar('penerima'),
-      'perihal' => $this->request->getVar('perihal'),
+      'nomor_surat' => getVariabel('nomor_surat'),
+      'tanggal_surat' => getVariabel('tanggal_surat'),
+      'tanggal_kirim' => getVariabel('tanggal_kirim'),
+      'nomor_agenda' => getVariabel('nomor_agenda'),
+      'sifat_surat' => getVariabel('sifat_surat'),
+      'id_bagian' => getVariabel('id_bagian'),
+      'penerima' => getVariabel('penerima'),
+      'perihal' => getVariabel('perihal'),
       'lampiran' => $namaLampiran
     ]);
     
