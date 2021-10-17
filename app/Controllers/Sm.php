@@ -20,6 +20,10 @@ class Sm extends BaseController
     $this->fungsi = new Fungsi();
   }
 
+public function getVariabel($str){
+	$this->request->getVar($str)
+}
+
   public function index()
 	{
     $id_bagian = $this->fungsi->getUserData(session()->get('id_user'))[0] ['id_bagian'];
@@ -120,15 +124,15 @@ class Sm extends BaseController
 		$namaLampiran = $fileLampiran->getName();
 
     $this->smModel->save([
-      'nomor_surat' => $this->request->getVar('nomor_surat'),
-      'tanggal_surat' => $this->request->getVar('tanggal_surat'),
-      'tanggal_terima' => $this->request->getVar('tanggal_terima'),
-      'nomor_agenda' => $this->request->getVar('nomor_agenda'),
-      'sifat_surat' => $this->request->getVar('sifat_surat'),
-      'pengirim' => $this->request->getVar('pengirim'),
-      'perihal' => $this->request->getVar('perihal'),
-      'id_bagian' => $this->request->getVar('id_bagian'),
-      'isi_disposisi' => $this->request->getVar('isi_disposisi'),
+      'nomor_surat' => getVariabel('nomor_surat'),
+      'tanggal_surat' => getVariabel('tanggal_surat'),
+      'tanggal_terima' => getVariabel('tanggal_terima'),
+      'nomor_agenda' => getVariabel('nomor_agenda'),
+      'sifat_surat' => getVariabel('sifat_surat'),
+      'pengirim' => getVariabel('pengirim'),
+      'perihal' => getVariabel('perihal'),
+      'id_bagian' => getVariabel('id_bagian'),
+      'isi_disposisi' => getVariabel('isi_disposisi'),
       'lampiran' => $namaLampiran
     ]);
     
