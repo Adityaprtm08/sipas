@@ -31,7 +31,7 @@ function init()
 		tabLinks[id].onfocus = function () {
 			this.blur()
 		};
-		if (i == 0)
+		if (i === 0)
 		{
 			tabLinks[id].className = 'active';
 		}
@@ -43,7 +43,7 @@ function init()
 
 	for (var id in contentDivs)
 	{
-		if (i != 0)
+		if (i !== 0)
 		{
 			console.log(contentDivs[id]);
 			contentDivs[id].className = 'content hide';
