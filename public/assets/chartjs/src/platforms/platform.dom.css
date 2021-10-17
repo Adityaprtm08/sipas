@@ -19,13 +19,13 @@
 .chartjs-size-monitor-expand,
 .chartjs-size-monitor-shrink {
 	position: absolute;
-	direction: ltr;
+  direction: ltr;
 	left: 0;
-	top: 0;
+  top: 0;
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
-	pointer-events: none;
+  pointer-events: none;
 	visibility: hidden;
 	z-index: -1;
 }
@@ -33,7 +33,7 @@
 .chartjs-size-monitor-expand > div {
 	position: absolute;
 	width: 1000000px;
-	height: 1000000px;
+  height: 1000000px;
 	left: 0;
 	top: 0;
 }
