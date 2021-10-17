@@ -163,7 +163,7 @@ td pre {
 }
 .trace tr td:first-child {
   min-width: 5em;
-  font-weight: bold;
+  font-weight: 700px;
 }
 .trace td {
   background: #e7e7e7;
